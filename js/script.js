@@ -1,5 +1,6 @@
 const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
+let marioMorto = false;
 
 const jump = () => {
     mario.classList.add('jump');
@@ -25,10 +26,9 @@ const loop = setInterval (() => {
         mario.style.animation = 'none';
         mario.style.bottom = `${marioPosition}px`;
 
+        marioMorto = true;
         clearInterval(loop);
     }
-    
 }, 10)
-
 
 document.addEventListener('keydown', jump)
